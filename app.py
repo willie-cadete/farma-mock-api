@@ -51,7 +51,7 @@ def home():
         results = []
 
         for item in api_mock:
-            if query in item['medicamento']:
+            if query.upper() in item['medicamento']:
                 results.append(item)
         if len(results) == 0:
             return jsonify( { 'message': 'No results found.' })
